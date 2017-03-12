@@ -1,5 +1,12 @@
+* {
+	font-family: 'Lato', sans-serif;
+	padding: 0;
+  margin: 0;
+  box-sizing: border-box; 
+}
+
 body { 
-  background: url("../images/oscars.jpg") no-repeat center center fixed; 
+  background: url("../images/train.jpg") no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -8,27 +15,17 @@ body {
 	height: 100%;
 }
 
-img {
-	max-width: 100%;
+input {
+	width: 100%;
+	border: none;
+  outline: none;
+  padding: 9px 10px;
+  color: #555;
+  margin-bottom: 5px;
+  background: #eee;
+  font-size: 1.1em; }
 }
 
-.jumbotron {
-	background-color: #c5b358;
-	font-family: 'Nunito', sans-serif; font-size: 20px;
-}
-
-#start-button, #start-over{
-	background-color: #c5b358;
+.button {
 	cursor: pointer;
 }
-
-.well {
-	background: #D6C98A;
-	border-style: solid;
-	border-color: #534e36;
-}
-
-#choices {
-	cursor: pointer;
-}
-

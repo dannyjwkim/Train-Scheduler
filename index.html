@@ -1,48 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Oscars Trivia Game</title>
-	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
-	<<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	
-	<!-- Optional theme -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-	
-	<!-- Latest compiled and minified JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<head>
+		<meta charset="UTF-8">
+		
+		<title>Train Scheduler - dannyjwkim</title>
+
+		<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+
+		<<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
+
+		<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+		
+	</head>
+	<!-- <audio autoplay loop id= "audio">
+				<source src="assets/audio/oscars.mp3" type="audio/mp3">
+	</audio> -->
+	<body>
+		<div class="container">
+			
+			<div class="jumbotron well well-sm text-center" id="header">
+				<h1>TRAIN SCHEDULE</h1>
+			</div>
+
+			<div class="panel panel-default">
+				<div class="panel-heading"><h4>Current Train Schedule</h4></div>
+				<div class="panel-body">
+					<table class="table table-striped">
+						<thread>
+							<tr>
+								<th>Train Name</th>
+								<th>Destination</th>
+								<th>Frequency (Min)</th>
+								<th>Next Arrival</th>
+								<th>Minutes Away</th>
+							</tr>
+						</thread>
+						<tbody id="schedule">
+						</tbody>
+					</table>
+				</div>
+			</div>
+			
+			<div class="panel panel-default">
+				<div class="panel-heading"><h4>Add Train</h4></div>
+				
+				<div class="panel-body">
+					<form class="column" role="form">
+						<input type="text" placeholder="Train Name" id="train" required>
+	      		<input type="text" placeholder="Destination" id="destination" required>
+	      		<input type="text" placeholder="First Train Time (HH:mm - military time)" id="firstTrain" required>
+	      		<input type="text" placeholder="Frequency (Minutes)" id="frequency" required>
+
+						<button type="button" class="btn btn-secondary" id="submit">Submit</button>
+						
+						<!-- <div class="form-group">
+							<label for="name-input">Train Name:</label>
+							<input class="form-control" id="employee-name" type="text">
+						</div>
+						<div class="form-group">
+							<label for="role-input">Destination:</label>
+							<input class="form-control" id="role-input" type="text">
+						</div>
+						<div class="form-group">
+							<label for="start-input">First Train Time:</label>
+							<input class="form-control" id="start-input" type="date">
+						</div>
+						<div class="form-group">
+							<label for="monthly-input">Frequency:</label>
+							<input class="form-control" id="monthly-input" type="number"></input>
+						</div>
+						<button class="btn btn-default" id="add-user" type="submit">Submit</button> -->
+					</form>
+				</div>
+				
+			</div>
+		</div>
+		
+	</body>
 	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.1.min.js"></script>
-	
-</head>
-
-<audio autoplay loop id= "audio">
-	<source src="assets/audio/oscars.mp3" type="audio/mp3">
-</audio>
-
-<body>
-
-<div class="container">
-
-<div class="jumbotron content text-center">
-
-<div class="container well">
-	<h1>Title</h1>
-	<div class="well well-sm" id="game-section">
-		<button id="start-button" type="button" class="btn btn-secondary btn-lg btn-block"><h2>Start Game</h2></button>
-	</div>
-</div>
-
-</div>
-
-</div>
-
-</body>
-	
-<script src="assets/javascript/app.js"></script>
-
+	<script src="https://www.gstatic.com/firebasejs/3.7.1/firebase.js"></script>
+	<script src="assets/javascript/app.js"></script>
 </body>
 </html>
