@@ -54,26 +54,30 @@ $( document ).ready(function() {
 		var firstHour = firstTime[0];
 		var firstMin = firstTime[1];
 
-		console.log(firstHour);
-		console.log(firstMin);
-
 		//Grabbing the current hour and minute so we can do math
 		var currentHour = moment().format('H');
 		var currentMin = moment().format('m');
 
+		// Parsing and converting all the values into Total Minutes 
 		var current = (currentHour * 60) + parseInt(currentMin);
 		var first = (firstHour * 60) + parseInt(firstMin);
 
+		// First part of conditional handles if first train has already gone
 		if (first < current) {
+			// If train has already gone, subtract the first train's total minutes value from the current time's total minutes value, then divide that by the train frequency. Then round up using the Math.ceil function to get the nth value of the next train. Then multiply that rounded up value (which represents the next train) by the frequency, add the first train time and then subtract the curent time to get the minAway value.
 			var minAway = (((Math.ceil((current-first)/frequency)) * frequency) + first) - current;
-			console.log (minAway);
+			// Add the minAway value to the current time and convert to proper time format
 			var nextArrivalTime = moment().add(minAway, "minutes").format('h:mm A');
 		} 
+		// Second part of conditional handles if first train has NOT yet arrived
 		else {
+			// If train has NOT yet arrived simply subtract current total minutes from first train total minutes
 			var minAway = first - current;
+			// Then simply return the value of the First Train Time as inputted by the user, but converted to Military Time in order to convert back into the desired time format
 			var nextArrivalTime = moment(firstMilitaryTime, "HH:mm").format('h:mm A');
 		}	
 
+		// Append the desired data results to the table
   	$("#schedule").append(
 			'<tr>' + 
 				'<td>' + trainName + '</td>' +
