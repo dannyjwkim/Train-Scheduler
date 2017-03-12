@@ -45,7 +45,7 @@ $( document ).ready(function() {
     var destinationName = snapshot.val().destination;
     var frequency = snapshot.val().frequency;
 
-    //Converting the user inputted First Train Time into Military Time Format
+    //Grabbing then converting the user inputted First Train Time into Military Time Format
 		var firstTrainTime = snapshot.val().firstTrain;
 		var firstMilitaryTime = moment(firstTrainTime, "hh:mm a").format("HH:mm");
 
