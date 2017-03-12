@@ -13,11 +13,6 @@ $( document ).ready(function() {
 
   var db = firebase.database();
 
- //  var train = "";
-	// var destination = "";
-	// var firstTrain = "";
-	// var frequency = "";
-
 	$("#submit").on("click", function(event){
   	event.preventDefault();
 
@@ -36,12 +31,35 @@ $( document ).ready(function() {
   		destination: destination,
   		firstTrain: firstTrain,
   		frequency: frequency,
-      // TIMESTAMP records when data was added around the globe according to the server time
-  		dateAdded: firebase.database.ServerValue.TIMESTAMP
   	});
   });
 
-	db.ref().on("child_added", function(childSnapshot) {
+	db.ref().on("child_added", function(snapshot) {
+
+    var trainName = snapshot.val().train;
+    var destinationName = snapshot.val().destination;
+    var frequency = snapshot.val().frequency;
+
+		var firstTrainTime = snapshot.val().firstTrain;
+
+  	$("#schedule").append(
+				'<tr>' + 
+					'<td>' + trainName + '</td>' +
+					'<td>' + destinationName + '</td>' +
+					'<td>' + frequency + '</td>' +
+					// '<td>' + nextArrivalTime + '</td>' + 
+					// '<td>' + minAwayTime + '</td>' +
+				'</tr>'
+		);
+
+				// $("#schedule")
+  		// .append(trainName)
+  		// .append(destinationName)
+  		// .append(frequency)
+
+
+
+	});
 
 
 
