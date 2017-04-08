@@ -58,7 +58,7 @@ $( document ).ready(function() {
 		var currentHour = moment().format('H');
 		var currentMin = moment().format('m');
 
-		// Parsing and converting all the values into Total Minutes 
+		// Parsing and converting all the values into Total Minutes
 		var current = (currentHour * 60) + parseInt(currentMin);
 		var first = (firstHour * 60) + parseInt(firstMin);
 
@@ -68,24 +68,24 @@ $( document ).ready(function() {
 			var minAway = (((Math.ceil((current-first)/frequency)) * frequency) + first) - current;
 			// Add the minAway value to the current time and convert to proper time format
 			var nextArrivalTime = moment().add(minAway, "minutes").format('h:mm A');
-		} 
+		}
 		// Second part of conditional handles if first train has NOT yet arrived
 		else {
 			// If train has NOT yet arrived simply subtract current total minutes from first train total minutes
 			var minAway = first - current;
 			// Then simply return the value of the First Train Time as inputted by the user, but converted to Military Time in order to convert back into the desired time format
 			var nextArrivalTime = moment(firstMilitaryTime, "HH:mm").format('h:mm A');
-		}	
+		}
 
 		// Append the desired data results to the table
   	$("#schedule").append(
-			'<tr>' + 
+			'<tr>' +
 				'<td>' + trainName + '</td>' +
 				'<td>' + destinationName + '</td>' +
 				'<td>' + frequency + '</td>' +
-				'<td>' + nextArrivalTime + '</td>' + 
+				'<td>' + nextArrivalTime + '</td>' +
 				'<td>' + minAway + '</td>' +
-			'</tr>'	
+			'</tr>'
 		);
 
 	});
