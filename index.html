@@ -1,78 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8">
 
-		<title>Train Scheduler - dannyjwkim</title>
+    <title>Train Scheduler - dannyjwkim</title>
 
-		<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
 
-		<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-		
-	</head>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    
+  </head>
 
-	<body>
-		<div class="container">
-			
-			<div class="jumbotron well well-sm text-center" id="header">
-				<h1>TRAIN SCHEDULE</h1>
-			</div>
+  <body>
+    <div class="container">
+      
+      <div class="jumbotron well well-sm text-center" id="header">
+        <h1>TRAIN SCHEDULE</h1>
+      </div>
 
-			<div class="panel panel-default">
+      <div class="panel panel-default">
 
-				<div class="panel-heading"><h4>Current Train Schedule</h4></div>
+        <div class="panel-heading"><h4>Current Train Schedule</h4></div>
 
-				<div class="panel-body">
+        <div class="panel-body">
 
-					<table class="table table-striped">
+          <table class="table table-striped">
 
-						<thread>
-							<tr>
-								<th>Train Name</th>
-								<th>Destination</th>
-								<th>Frequency (Minutes)</th>
-								<th>Next Arrival</th>
-								<th>Minutes Away</th>
-							</tr>
-						</thread>
+            <thread>
+              <tr>
+                <th>Train Name</th>
+                <th>Destination</th>
+                <th>Frequency (Minutes)</th>
+                <th>Next Arrival</th>
+                <th>Minutes Away</th>
+              </tr>
+            </thread>
 
-						<tbody id="schedule">
-						</tbody>
-					</table>
-				</div>
-			</div>
-			
-			<div class="panel panel-default">
-				
-				<div class="panel-heading"><h4>Add Train</h4></div>
-				
-				<div class="panel-body">
+            <tbody id="schedule">
+            </tbody>
+          </table>
+        </div>
+      </div>
+      
+      <div class="panel panel-default">
+        
+        <div class="panel-heading"><h4>Add Train</h4></div>
+        
+        <div class="panel-body">
 
-					<form class="column" role="form">
+          <form class="column" role="form">
 
-						<input type="text" placeholder="Train Name" id="train" required>
-	      		<input type="text" placeholder="Destination" id="destination" required>
-	      		<input type="time" placeholder="First Train Time" id="firstTrain" required>
-	      		<input type="number" placeholder="Frequency (Minutes)" id="frequency" required>
+            <input type="text" placeholder="Train Name" id="train" required>
+            <input type="text" placeholder="Destination" id="destination" required>
+            <input type="time" placeholder="First Train Time" id="firstTrain" required>
+            <input type="number" placeholder="Frequency (Minutes)" id="frequency" required>
 
-						<button type="button" class="btn btn-secondary" id="submit">Submit</button>
-						
-					</form>
-				</div>
-				
-			</div>
-		</div>
-		
-	</body>
-	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.1.min.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/3.7.1/firebase.js"></script>
-	<script src="assets/javascript/app.js"></script>
+            <button type="button" class="btn btn-secondary" id="submit">Submit</button>
+            
+          </form>
+        </div>
+        
+      </div>
+    </div>
+    
+  </body>
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.1.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/3.7.1/firebase.js"></script>
+  <script src="assets/javascript/app.js"></script>
 </html>
